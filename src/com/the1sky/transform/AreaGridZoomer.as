@@ -10,24 +10,32 @@ package com.the1sky.transform{
 	 * 
 	 */	
 	public class AreaGridZoomer{
-		public const LT:String = "lt";          		//左上
-		public const RT:String = "rt";          		//右上
-		public const LB:String = "lb";          		//左底
-		public const RB:String = "rb";          		//右底
-		public const C:String = "c";           	 		//中间
+		public const LT:String = "lt";          		
+		public const RT:String = "rt";          		
+		public const LB:String = "lb";          		
+		public const RB:String = "rb";          		
+		public const C:String = "c";           	 		
 		
-		private var _w:Number;                  		//区域宽度
-		private var _h:Number;                 	 		//区域高度
-		private var _itemW:Number;              		//item宽度
-		private var _itemH:Number;              		//item高度
-		private var _itemToW:Number;                    //item的目标宽度
-		private var _itemToH:Number;                    //item的目标高度
-		private var _hSpace:Number;                     //水平间隔
-		private var _vSpace:Number;                     //垂直间隔
-		private var _hNum:int;                          //水平item数目
-		private var _vNum:int;                          //垂直item数目
-		private var _registrationPointType:String;      // 注册点类型
-		private var _oldXYs:Dictionary;                 //旧的x,y
+		private var _w:Number;                  		
+		private var _h:Number;                 	 		
+		private var _itemW:Number;              		
+		private var _itemH:Number;
+		//item的目标宽度
+		private var _itemToW:Number;    
+		//item的目标高度
+		private var _itemToH:Number;   		
+		//水平间隔
+		private var _hSpace:Number;  
+		//垂直间隔
+		private var _vSpace:Number; 
+		//水平item数目
+		private var _hNum:int;      
+		//垂直item数目
+		private var _vNum:int;     
+		// 注册点类型
+		private var _registrationPointType:String;  
+		//旧的x,y
+		private var _oldXYs:Dictionary;                 
 		
 		/**
 		 * 
@@ -42,11 +50,7 @@ package com.the1sky.transform{
 		 * @param registrationPointType
 		 * 
 		 */		
-		public function AreaGridZoomer( itemWidth:Number, itemHeight:Number,
-										   itemToWidth:Number, itemToHeight:Number,
-										   hNumber:int, vNumber:int,
-										   hSpace:Number=0, vSpace:Number=0, 
-										   registrationPointType:String="lt" ){
+		public function AreaGridZoomer( itemWidth:Number, itemHeight:Number, itemToWidth:Number, itemToHeight:Number, hNumber:int, vNumber:int, hSpace:Number=0, vSpace:Number=0, registrationPointType:String="lt" ){
 						
 			_itemW = itemWidth;
 			_itemH = itemHeight;
@@ -277,8 +281,7 @@ package com.the1sky.transform{
 			_oldXYs = new Dictionary();
 			for( var i:int = 0; i < _hNum; i++ ){
 				for( var j:int = 0; j < _vNum; j++ ){
-					_oldXYs[i + "_" + j] = new Point( i * ( _itemW + _hSpace ), 
-													  j * ( _itemH + _vSpace ) );
+					_oldXYs[i + "_" + j] = new Point( i * ( _itemW + _hSpace ), j * ( _itemH + _vSpace ) );
 				}
 			}
 		}
